@@ -19,26 +19,6 @@
 CREATE DATABASE IF NOT EXISTS `db_empresa` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_empresa`;
 
--- Volcando estructura para tabla db_empresa.clientes
-CREATE TABLE IF NOT EXISTS `clientes` (
-  `id_cliente` int NOT NULL AUTO_INCREMENT,
-  `nit` varchar(10) NOT NULL,
-  `nombres` varchar(60) NOT NULL,
-  `apellidos` varchar(60) NOT NULL,
-  `direccion` varchar(100) DEFAULT NULL,
-  `telefono` varchar(12) DEFAULT NULL,
-  `fecha_nacimiento` date DEFAULT NULL,
-  PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Volcando datos para la tabla db_empresa.clientes: ~4 rows (aproximadamente)
-DELETE FROM `clientes`;
-INSERT INTO `clientes` (`id_cliente`, `nit`, `nombres`, `apellidos`, `direccion`, `telefono`, `fecha_nacimiento`) VALUES
-	(1, '1', '1', '1', '1', '1', '2024-09-01'),
-	(4, '1', '1', '1', '1', '1', '2024-09-01'),
-	(5, '1', '1', '1', '1', '1', '2024-09-01'),
-	(6, '1', '1', '1', '1', '1', '2024-09-01');
-
 -- Volcando estructura para tabla db_empresa.empleado
 CREATE TABLE IF NOT EXISTS `empleado` (
   `id_empleado` int NOT NULL AUTO_INCREMENT,
@@ -54,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   CONSTRAINT `fk_empleado_puesto` FOREIGN KEY (`id_puesto`) REFERENCES `puestos` (`id_puesto`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla db_empresa.empleado: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla db_empresa.empleado: ~1 rows (aproximadamente)
 DELETE FROM `empleado`;
 INSERT INTO `empleado` (`id_empleado`, `codigo`, `nombres`, `apellidos`, `direccion`, `telefono`, `fecha_nacimiento`, `id_puesto`) VALUES
 	(1, 'E001', 'Henry Javier', 'Rodríguez Geronimo', 'Villa Canales', '54573864', '1999-10-14', 1),
